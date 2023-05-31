@@ -29,6 +29,11 @@ def control_train ():
         return "Invalid command"
     
 def train_set_speed(speed, direction):
-    pass
+    if direction == 0:
+        motor.stop()
+    elif direction == 1:
+        motor.forward(speed)
+    else:
+        motor.backward(speed)
 
 run (host='0.0.0.0', port=8080, debug=True)
